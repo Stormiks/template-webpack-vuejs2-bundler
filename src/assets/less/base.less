@@ -1,0 +1,106 @@
+body {
+  background-color: @color-greylight;
+  color: @colorBlack;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: @FFRRegular;
+  letter-spacing: 0.5px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 0%;
+    }
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  &.link {
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Анимации для <transition> VueJS
+.dropdown {
+  &-enter-active,
+  &-leave-active {
+    transition: height 0.5s ease-out 0s;
+    overflow: hidden;
+  }
+
+  &-enter,
+  &-leave-to {
+    height: 0;
+  }
+}
+
+.tabsfade {
+  &-enter-to {
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
+  &-enter-active {
+    transition: opacity 0.1s;
+  }
+  &-leave {
+    width: 100%;
+    position: absolute;
+    top: 0;
+  }
+  &-leave-active {
+    transition: opacity 0.1s;
+  }
+  &-leave-to
+  {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.error-page {
+  h1 {
+    color: @hErrorPage;
+    font: 64px/75px @FFRLight;
+
+    span {
+      color: @hErrorPageSpan;
+      font: 144px/144px @FFRItalic;
+    }
+  }
+
+  p {
+    color: @hErrorPage;
+    font: 24px/26px @FFRLight;
+  }
+
+  h6 {
+    color: @hErrorPage;
+    font: 14px/16px @FFRLight;
+  }
+}
+
+.bg-no {
+  background: none !important;
+}
+
+.bg-white {
+  background-color: @colorWhite;
+}
